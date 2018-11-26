@@ -25,7 +25,7 @@
 #define UNFOCUS         "#1d383e" /* unfocused window border color  */
 #define MINWSZ          50        /* minimum window size in pixels  */
 #define DEFAULT_DESKTOP 0         /* the desktop to focus initially */
-#define DESKTOPS        4         /* number of desktops - edit DESKTOPCHANGE keys to suit */
+#define DESKTOPS        8         /* number of desktops - edit DESKTOPCHANGE keys to suit */
 
 /**
  * open applications to specified desktop with specified mode.
@@ -75,7 +75,7 @@ static Key keys[] = {
     {  MOD1,             XK_b,          togglepanel,       {NULL}},
     {  MOD1,             XK_BackSpace,  focusurgent,       {NULL}},
     {  MOD4|SHIFT,       XK_q,          killclient,        {NULL}},
-    {  MOD1,             XK_j,          next_win,          {NULL}},
+    {  MOD1,             XK_Tab,        next_win,          {NULL}},
     {  MOD1,             XK_k,          prev_win,          {NULL}},
     {  MOD1,             XK_h,          resize_master,     {.i = -10}}, /* decrease size in px */
     {  MOD1,             XK_l,          resize_master,     {.i = +10}}, /* increase size in px */
@@ -85,7 +85,7 @@ static Key keys[] = {
     {  MOD1|CONTROL,     XK_l,          rotate,            {.i = +1}},
     {  MOD1|SHIFT,       XK_h,          rotate_filled,     {.i = -1}},
     {  MOD1|SHIFT,       XK_l,          rotate_filled,     {.i = +1}},
-    {  MOD1,             XK_Tab,        last_desktop,      {NULL}},
+    {  MOD4,             XK_Tab,        last_desktop,      {NULL}},
     {  MOD1,             XK_Return,     swap_master,       {NULL}},
     {  MOD4|SHIFT,       XK_j,          move_down,         {NULL}},
     {  MOD4|SHIFT,       XK_k,          move_up,           {NULL}},
@@ -97,7 +97,7 @@ static Key keys[] = {
     {  MOD1|CONTROL,     XK_r,          quit,              {.i = 0}}, /* quit with exit value 0 */
     {  MOD1|CONTROL,     XK_q,          quit,              {.i = 1}}, /* quit with exit value 1 */
     {  MOD4,             XK_Return,     spawn,             {.com = urxvt}},
-    {  MOD1|SHIFT,       XK_Return,     spawn,             {.com = sakura}},
+    {  MOD4|SHIFT,       XK_Return,     spawn,             {.com = sakura}},
     {  MOD4,             XK_z,          spawn,             {.com = rofi}},
     {  MOD4,             XK_d,          spawn,             {.com = dmenu}},
     {  MOD4,             XK_ccedilla,   spawn,             {.com = lock}},
@@ -107,24 +107,29 @@ static Key keys[] = {
     {  MOD4,             XK_F9,         spawn,             {.com = brightdown}},
     {  MOD4,             XK_Down,       moveresize,        {.v = (int []){   0,  25,   0,   0 }}}, /* move down  */
     {  MOD4,             XK_Up,         moveresize,        {.v = (int []){   0, -25,   0,   0 }}}, /* move up    */
-    {  MOD4,             XK_Left,       moveresize,        {.v = (int []){  25,   0,   0,   0 }}}, /* move right */
-    {  MOD4,             XK_Right,      moveresize,        {.v = (int []){ -25,   0,   0,   0 }}}, /* move left  */
+    {  MOD4,             XK_Right,      moveresize,        {.v = (int []){  25,   0,   0,   0 }}}, /* move right */
+    {  MOD4,             XK_Left,       moveresize,        {.v = (int []){ -25,   0,   0,   0 }}}, /* move left  */
     {  MOD4|SHIFT,       XK_Down,       moveresize,        {.v = (int []){   0,   0,   0,  25 }}}, /* height grow   */
     {  MOD4|SHIFT,       XK_Up,         moveresize,        {.v = (int []){   0,   0,   0, -25 }}}, /* height shrink */
     {  MOD4|SHIFT,       XK_Right,      moveresize,        {.v = (int []){   0,   0,  25,   0 }}}, /* width grow    */
     {  MOD4|SHIFT,       XK_Left,       moveresize,        {.v = (int []){   0,   0, -25,   0 }}}, /* width shrink  */
-       DESKTOPCHANGE(    XK_F1,                             0)
-       DESKTOPCHANGE(    XK_F2,                             1)
-       DESKTOPCHANGE(    XK_F3,                             2)
-       DESKTOPCHANGE(    XK_F4,                             3)
-};
+       DESKTOPCHANGE(     XK_ampersand,                     0)
+       DESKTOPCHANGE(     XK_eacute,                        1)
+       DESKTOPCHANGE(     XK_quotedbl,                      2)
+       DESKTOPCHANGE(     XK_apostrophe,                    3)
+       DESKTOPCHANGE(     XK_parenleft,                     4)
+       DESKTOPCHANGE(     XK_minus,                         5)
+       DESKTOPCHANGE(     XK_egrave,                        6)
+       DESKTOPCHANGE(     XK_underscore,                    7)
+    // DESKTOPCHANGE(     XK_ccedilla,                      8)
+    // DESKTOPCHANGE(     XK_agrave,                        9)
 
 /**
  * mouse shortcuts
  */
 static Button buttons[] = {
-    {  MOD1,    Button1,     mousemotion,   {.i = MOVE}},
-    {  MOD1,    Button3,     mousemotion,   {.i = RESIZE}},
+    {  MOD4,    Button1,     mousemotion,   {.i = MOVE}},
+    {  MOD4,    Button3,     mousemotion,   {.i = RESIZE}},
 };
 #endif
 
