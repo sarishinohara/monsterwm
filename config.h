@@ -113,23 +113,24 @@ static Key keys[] = {
     {  MOD4|SHIFT,       XK_Up,         moveresize,        {.v = (int []){   0,   0,   0, -25 }}}, /* height shrink */
     {  MOD4|SHIFT,       XK_Right,      moveresize,        {.v = (int []){   0,   0,  25,   0 }}}, /* width grow    */
     {  MOD4|SHIFT,       XK_Left,       moveresize,        {.v = (int []){   0,   0, -25,   0 }}}, /* width shrink  */
-       DESKTOPCHANGE(     XK_ampersand,                     0)
-       DESKTOPCHANGE(     XK_eacute,                        1)
-       DESKTOPCHANGE(     XK_quotedbl,                      2)
-       DESKTOPCHANGE(     XK_apostrophe,                    3)
-       DESKTOPCHANGE(     XK_parenleft,                     4)
-       DESKTOPCHANGE(     XK_minus,                         5)
-       DESKTOPCHANGE(     XK_egrave,                        6)
-       DESKTOPCHANGE(     XK_underscore,                    7)
-    // DESKTOPCHANGE(     XK_ccedilla,                      8)
-    // DESKTOPCHANGE(     XK_agrave,                        9)
+       DESKTOPCHANGE(    XK_ampersand,                     0)
+       DESKTOPCHANGE(    XK_eacute,                        1)
+       DESKTOPCHANGE(    XK_quotedbl,                      2)
+       DESKTOPCHANGE(    XK_apostrophe,                    3)
+       DESKTOPCHANGE(    XK_parenleft,                     4)
+       DESKTOPCHANGE(    XK_minus,                         5)
+       DESKTOPCHANGE(    XK_egrave,                        6)
+       DESKTOPCHANGE(    XK_underscore,                    7)
+    // DESKTOPCHANGE(    XK_ccedilla,                      8)
+    // DESKTOPCHANGE(    XK_agrave,                        9)
+};
 
 /**
  * mouse shortcuts
  */
 static Button buttons[] = {
-    {  MOD4,    Button1,     mousemotion,   {.i = MOVE}},
-    {  MOD4,    Button3,     mousemotion,   {.i = RESIZE}},
+    {  MOD1,    Button1,     mousemotion,   {.i = MOVE}},
+    {  MOD1,    Button3,     mousemotion,   {.i = RESIZE}},
 };
 #endif
 
