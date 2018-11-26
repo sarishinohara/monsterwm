@@ -57,7 +57,7 @@ static const char *sakura[] = { "sakura", NULL };
 static const char *urxvt[] = { "urxvt", NULL };
 static const char *dmenu[] = { "dmenuu", NULL };
 static const char *rofi[] = { "rofir", NULL };
-static const char *lock[] = { "lock", NULL };
+static const char *lock[] = { "i3lock-next", NULL };
 static const char *volup[] = { "volup", NULL };
 static const char *voldown[] = { "voldown", NULL };
 static const char *brightup[] = { "brightup", NULL };
@@ -111,8 +111,8 @@ static Key keys[] = {
     {  MOD4,             XK_Right,      moveresize,        {.v = (int []){ -25,   0,   0,   0 }}}, /* move left  */
     {  MOD4|SHIFT,       XK_Down,       moveresize,        {.v = (int []){   0,   0,   0,  25 }}}, /* height grow   */
     {  MOD4|SHIFT,       XK_Up,         moveresize,        {.v = (int []){   0,   0,   0, -25 }}}, /* height shrink */
-    {  MOD4|SHIFT,       XK_Left,       moveresize,        {.v = (int []){   0,   0,  25,   0 }}}, /* width grow    */
-    {  MOD4|SHIFT,       XK_Right,      moveresize,        {.v = (int []){   0,   0, -25,   0 }}}, /* width shrink  */
+    {  MOD4|SHIFT,       XK_Right,      moveresize,        {.v = (int []){   0,   0,  25,   0 }}}, /* width grow    */
+    {  MOD4|SHIFT,       XK_Left,       moveresize,        {.v = (int []){   0,   0, -25,   0 }}}, /* width shrink  */
        DESKTOPCHANGE(    XK_F1,                             0)
        DESKTOPCHANGE(    XK_F2,                             1)
        DESKTOPCHANGE(    XK_F3,                             2)
